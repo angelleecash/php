@@ -1,0 +1,136 @@
+/* ==================================================[重置] */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, section, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0; }
+ul, ol { list-style: outside none; }
+fieldset, img { border: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+body, small, sup, sub, button, input, textarea, select { font: 12px/1 Arial, Helvetica, Verdana, SimSun, sans-serif; }
+body { line-height: 1.5; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var { font-style: normal; }
+code, kbd, pre, samp { font-family: Consolas, "Lucida Console", Courier, SimSun, monospace; }
+sup, sub { position: relative; vertical-align: baseline; }
+sup { top: -3px; }
+sub { bottom: -3px; }
+button { padding: 5px 10px; overflow: visible; }
+
+/* ==================================================[主题] */
+@font-face {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/fontawesome-webfont.eot?v=4.1.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+}
+
+/* --------------------------------------------------[字体] */
+
+body, small, sup, sub, button, input, textarea, select { font-size: 16px; font-family: Verdana, Helvetica, Arial, "Microsoft YaHei", sans-serif; }
+code, kbd, pre, samp { font-family: Consolas, "Lucida Console", Courier, monospace; }
+b, i { font-style: normal; font-weight: normal; }
+* { -webkit-tap-highlight-color: transparent; }
+
+/* --------------------------------------------------[按钮] */
+button { width: 100px; height: 30px; margin: 10px 5px; padding: 0; border: 1px solid hsl(0, 0%, 80%); /*border-radius: 20px;*/ background-color: hsl(0, 0%, 90%); color: #333; outline: none; }
+button:hover { background-color: hsl(0, 0%, 95%); }
+button:active { background-color: hsl(0, 0%, 85%); }
+button:disabled { opacity: .25; pointer-events: none; }
+button.primary,
+button.warning,
+button.danger,
+button.inverse { color: white; }
+button.primary { border-color: hsl(210, 65%, 30%); background-color: hsl(210, 65%, 40%); }
+button.primary:hover { background-color: hsl(210, 65%, 45%); }
+button.primary:active { background-color: hsl(210, 65%, 35%); }
+button.warning { border-color: #CC6600; background-color: #E57100; }
+button.warning:hover { background-color: #F27900; }
+button.warning:active { background-color: #D96C00; }
+button.danger { border-color: #BF2A1D; background-color: #D93021; }
+button.danger:hover { background-color: #E53322; }
+button.danger:active { background-color: #CC2D1F; }
+button.inverse { border-color: #4D4D4D; background-color: #666666; }
+button.inverse:hover { background-color: #737373; }
+button.inverse:active { background-color: #595959; }
+
+/* --------------------------------------------------[链接] */
+a { text-decoration: none; }
+a:link { color: #102197; }
+a:visited { color: #396686; }
+a:hover { text-decoration: underline; }
+a:active { }
+
+/* --------------------------------------------------[图标] */
+.icon::before { display: inline-block; width: 16px; height: 16px; font: normal normal 16px/16px FontAwesome; text-align: center;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* --------------------------------------------------[信息提示] */
+[class*="hint"] { position: relative; }
+[class*="hint"]::before,
+[class*="hint"]::after { display: none; position: absolute; right: 50%; bottom: 100%; z-index: 1000; pointer-events: none; }
+[class*="hint"]::before { content: ""; top: -5px; z-index: 1010; width: 0; height: 0; margin-right: -5px; border: 5px solid transparent; border-top-color: rgba(0, 0, 0, .8); }
+[class*="hint"]::after { content: attr(data-hint); margin-bottom: 5px; padding: 5px 15px; border-radius: 2px; box-shadow: 0 0 2px black; background: rgba(0, 0, 0, .8); color: white; font: bold 14px/20px Verdana, Helvetica, Arial, "Microsoft YaHei", sans-serif; white-space: pre; word-wrap: break-word; text-align: center;
+  -webkit-transform: translateX(50%); transform: translateX(50%); }
+[class*="hint"]:hover::before,
+[class*="hint"]:hover::after/*,
+[class*="hint"]:active::before,
+[class*="hint"]:active::after,
+[class*="hint"]:focus::before,
+[class*="hint"]:focus::after*/  { display: block; }
+
+.hint-left:before,
+.hint-left:after { right: auto; bottom: 50%; margin-right: 0; }
+.hint-left:before { top: 50%; left: -5px; margin-top: -5px; border-top-color: transparent; border-left-color: rgba(0, 0, 0, .8); }
+.hint-left:after { left: auto; right: 100%; margin: 0 5px 0 0;
+  -webkit-transform: translateX(0) translateY(50%); transform: translateX(0) translateY(50%); }
+
+.hint-right:before,
+.hint-right:after { right: auto; bottom: 50%; margin-right: 0; }
+.hint-right:before { top: 50%; right: -5px; margin-top: -5px; border-top-color: transparent; border-right-color: rgba(0, 0, 0, .8); }
+.hint-right:after { left: 100%; right: auto; margin: 0 0 0 5px;
+  -webkit-transform: translateX(0) translateY(50%); transform: translateX(0) translateY(50%); }
+
+/* --------------------------------------------------[滚动框] */
+div.widget-scrollbox > div.track { z-index: 10; width: 7px; border-radius: 7px; background-color: rgba(0, 0, 0, 0); }
+div.widget-scrollbox > div.track > div.scrollbar { width: 7px; border-radius: 7px; }
+
+/* --------------------------------------------------[对话框] */
+div.widget-dialog { background: white; border: 1px solid #CFCFCF; border-radius: 5px; box-shadow: 0 0 5px black; }
+div.widget-dialog .close { position: absolute; right: -10px; top: -10px; z-index: 1000; width: 32px; height: 32px; margin: 0; border: 0 none; border-radius: 20px; box-shadow: 0 0 3px black; }
+
+/* ==================================================[模块] */
+/* --------------------------------------------------[视口] */
+body { background: white; color: hsl(0, 0%, 20%); cursor: default; }
+
+/* --------------------------------------------------[页头] */
+header { position: fixed; left: 0; right: 0; top: 0; z-index: 1000; min-width: 1024px; height: 50px; background: hsl(215, 55%, 40%); color: #D5E1F2; font-size: 15px; line-height: 50px; }
+
+/* --------------------------------------------------[页脚] */
+footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000; min-width: 1024px; height: 25px; background: white; border-top: 1px solid gainsboro; font-size: 12px; line-height: 25px; }
+
+/* --------------------------------------------------[菜单] */
+#menu { position: absolute; left: 0; top: 0; width: 300px; height: 50px; border-right: 1px solid hsl(215, 55%, 35%); color: white;
+  /*-webkit-transition: background .4s; transition: background .4s;*/ }
+/*#menu.active { background: hsl(215, 55%, 40%); }*/
+#menu.icon::before { content: "\f0c9"; position: absolute; right: 20px; top: 17px; font-size: 14px; }
+#menu > span { display: block; padding-left: 45px; background: url(../images/logo.png) no-repeat 20px 14px; }
+/*#menu > ul { top: 0; }*/
+#menu ul { display: none; position: absolute; z-index: 50000; width: 300px; }
+#menu ul li { width: 300px; height: 50px; border: none; background: hsl(215, 55%, 40%); }
+#menu ul li a { display: block; height: 50px; padding: 0 20px 0 36px; color: white; text-decoration: none; }
+#menu ul li a.folder { position: relative; }
+#menu ul li a.folder.icon::before { content: "\f0da"; position: absolute; right: 10px; top: 17px; }
+#menu ul li a.current { position: relative; }
+#menu ul li a.current.icon::before { content: "\f00c"; position: absolute; left: 10px; top: 17px; }
+#menu ul li:hover { background: hsl(215, 55%, 45%); }
+#menu ul li:active { background: hsl(215, 55%, 35%); }
+#menu ul ul { margin: -50px auto auto 300px; }
+
+/* --------------------------------------------------[用户信息] */
+#userinfo { position: absolute; right: 0; top: 0; height: 50px; border-left: 1px solid hsl(215, 55%, 35%); }
+#userinfo a.sign_out { float: right; padding: 0 20px; color: white; text-decoration: none; cursor: default; }
+#userinfo a.sign_out:hover { background: hsl(215, 55%, 45%); }
+#userinfo a.sign_out:active { background: hsl(215, 55%, 35%); }
+#userinfo a.sign_out.icon::before { content: "\f08b"; margin-right: 2px; }
+
+/* --------------------------------------------------[加载提示] */
+#loading { display: none; position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 5000000; background: rgba(0, 0, 0, 0); }
+#loading span { position: absolute; left: 50%; top: 50%; width: 396px; height: 56px; margin: -30px 0 0 -200px; border: 2px solid gainsboro; border-radius: 5px; box-shadow: 0 0 5px black; background: rgba(0, 0, 0, .75); color: white; font-weight: 600; font-size: 16px; line-height: 56px; text-align: center; }
